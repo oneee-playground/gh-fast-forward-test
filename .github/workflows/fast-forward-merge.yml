@@ -8,7 +8,8 @@ jobs:
     fast-forward-merge:
         if: |
             github.event.issue.pull_request && 
-            contains(github.event.comment.body, '/fast-forward')
+            contains(github.event.comment.body, '/fast-forward') &&
+            github.triggering_actor == 'onee-only'
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
