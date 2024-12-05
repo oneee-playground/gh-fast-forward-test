@@ -8,8 +8,7 @@ jobs:
     fast-forward-merge:
         if: |
             github.event.issue.pull_request && 
-            contains(github.event.comment.body, '/fast-forward') && 
-            (github.head_ref == 'source' && github.base_ref == 'main')
+            contains(github.event.comment.body, '/fast-forward')
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
