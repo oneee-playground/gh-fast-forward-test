@@ -5,6 +5,13 @@ on:
         types: [created]
 
 jobs:
+    echo-base-head-ref:
+        runs-on: ubuntu-latest
+        steps:
+            - run: |
+                  echo "Base Ref: ${{ github.base_ref }}"
+                  echo "Head Ref: ${{ github.head_ref }}"
+
     fast-forward-merge:
         if: |
             github.event.issue.pull_request && 
