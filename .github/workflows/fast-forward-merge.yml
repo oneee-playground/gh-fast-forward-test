@@ -22,4 +22,4 @@ jobs:
                   success_message: "Success! Fast forwarded target_base to source_head! git checkout target_base && git merge source_head --ff-only "
                   failure_message: "Failed! Cannot do fast forward!"
                   production_branch: "main"
-                  staging_branch: "develop"
+                  staging_branch: "source"
