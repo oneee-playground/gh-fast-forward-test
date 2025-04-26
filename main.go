@@ -4,5 +4,4 @@ import "fmt"
 
 func main() {
 	fmt.Println("Hello Fast Forward!")
-	fmt.Println("Added a line")
 }
