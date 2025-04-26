@@ -23,7 +23,7 @@ jobs:
       - name: Fast Forward PR
         uses: onee-only/ff-merge@main
         with:
-          allowed-roles: '["maintain"]'
+          allowed-roles: '["admin"]'
           comment: "always"
           merge: true
           GITHUB_TOKEN: ${{ secrets.FAST_FORWARD_GITHUB_TOKEN }}
