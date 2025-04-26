@@ -14,6 +14,9 @@ jobs:
 
   fast-forward-merge:
     if: github.event.label.name == 'fast-forward-no-token'
+    permissions:
+      contents: write
+
     runs-on: ubuntu-latest
     steps:
       - name: Debug Event Payload
