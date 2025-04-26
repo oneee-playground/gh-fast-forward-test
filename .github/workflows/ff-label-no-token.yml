@@ -14,12 +14,17 @@ jobs:
 
   fast-forward-merge:
     if: github.event.label.name == 'fast-forward-no-token'
+    permissions:
+      contents: write # For pushing to base branch.
+      pull-requests: write # For creating a comment.
     runs-on: ubuntu-latest
     steps:
       - name: Debug Event Payload
         run: |
           echo "Event Payload:"
           echo "${{ toJson(github.event) }}"
+
+      # Note that this workflow cannot trigger other events like 'push'.
       - name: Fast Forward PR
         uses: onee-only/ff-merge@main
         with:
