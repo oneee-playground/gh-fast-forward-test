@@ -17,8 +17,10 @@ jobs:
       github.event.issue.pull_request && contains(github.event.comment.body, '/fast-forward')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
+      - name: Debug Event Payload
+        run: |
+          echo "Event Payload:"
+          echo "${{ toJson(github.event) }}"
       - name: Fast Forward PR
         uses: onee-only/ff-merge@main
         with:
